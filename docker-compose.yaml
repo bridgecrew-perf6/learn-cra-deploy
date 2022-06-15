@@ -5,4 +5,4 @@ services:
       context: .
       dockerfile: simple.Dockerfile
     ports:
-      - 4000:3000
+      - 4000:80

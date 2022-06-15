@@ -8,5 +8,3 @@ RUN yarn && npm run build
 
 FROM nginx:alpine
 COPY --from=builder code/build /usr/share/nginx/html
-
-EXPOSE 3000
