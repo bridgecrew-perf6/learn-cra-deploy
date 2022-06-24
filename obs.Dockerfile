@@ -16,7 +16,7 @@ RUN wget http://obs-community.obs.cn-north-1.myhuaweicloud.com/obsutil/current/o
 
 RUN pwd
 
-RUN ls
+RUN ls /usr/local/bin/
 
 
 # 单独分离 package.json，是为了安装依赖可最大限度利用缓存
