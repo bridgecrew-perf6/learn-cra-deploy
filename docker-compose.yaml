@@ -12,3 +12,13 @@ services:
       dockerfile: router.Dockerfile
     ports:
       - 3000:80
+  obs:
+    build:
+      context: .
+      dockerfile: obs.Dockerfile
+      args:
+        - ACCESS_KEY_ID
+        - ACCESS_KEY_SECRET
+        - ENDPOINT=obs.cn-south-1.myhuaweicloud.com
+    ports:
+      - 8000:80
