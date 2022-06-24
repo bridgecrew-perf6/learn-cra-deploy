@@ -9,7 +9,7 @@ WORKDIR /code
 
 # 为了更好的缓存，把它放在前边
 # 这一步是根据华为云obs相关文档，下载obsutil,并配置key,secret等信息到环境变量
-RUN wget https://obs-community.obs.cn-north-1.myhuaweicloud.com/obsutil/current/obsutil_linux_amd64.tar.gz -O /usr/local/bin/obsutil \
+RUN wget https://obs-community.obs.cn-north-1.myhuaweicloud.com/obsutil/current/obsutil_linux_amd64.tar.gz -P /usr/local/bin/obsutil \
     && tar -xzvf /usr/local/bin/obsutil/obsutil_linux_amd64.tar.gz \
     && chmod 755 /usr/local/bin/obsutil \
     && obsutil config -i $ACCESS_KEY_ID -k $ACCESS_KEY_SECRET -e $ENDPOINT 
