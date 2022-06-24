@@ -14,9 +14,10 @@ RUN wget http://obs-community.obs.cn-north-1.myhuaweicloud.com/obsutil/current/o
     # && chmod 755 /usr/local/bin/obsutil_linux_amd64_5.3.4 \
     # && obsutil config -i $ACCESS_KEY_ID -k $ACCESS_KEY_SECRET -e $ENDPOINT 
 
+RUN pwd
+
 RUN ls
 
-RUN tree
 
 # 单独分离 package.json，是为了安装依赖可最大限度利用缓存
 # ADD package.json yarn.lock /code/
