@@ -7,3 +7,14 @@
 npm i esdk-obs-nodejs
 
 
+### docker 操作
+进入docker容器中：
+docker exec -it <容器id> /bin/sh
+
+docker查看容器的运行位置以及所在位置:
+docker inspect <容器id>
+
+
+
+
+

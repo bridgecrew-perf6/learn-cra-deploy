@@ -17,8 +17,8 @@ services:
       context: .
       dockerfile: obs.Dockerfile
       args:
-        - ACCESS_KEY_ID
-        - ACCESS_KEY_SECRET
+        - OBS_ACCESS_KEY_ID
+        - OBS_SECRET_ACCESS_KEY
         - ENDPOINT=obs.cn-south-1.myhuaweicloud.com
     ports:
       - 8000:80
