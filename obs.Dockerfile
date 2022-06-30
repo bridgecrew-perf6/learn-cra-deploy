@@ -11,22 +11,10 @@ WORKDIR /code
 # 这一步是根据华为云obs相关文档，下载obsutil,并配置key,secret等信息到环境变量
 RUN wget http://obs-community.obs.cn-north-1.myhuaweicloud.com/obsutil/current/obsutil_linux_amd64.tar.gz -O /usr/local/bin/obsutil_linux_amd64.tar.gz \
     && tar -xzvf /usr/local/bin/obsutil_linux_amd64.tar.gz -C /usr/local/bin --strip-components 1 \
-    && chmod 755 /usr/local/bin/obsutil \
-    && chmod 755 /usr/local/bin/setup.sh \
-    && source /usr/local/bin/setup.sh /usr/local/bin/obsutil 
+    && chmod 755 /usr/local/bin/obsutil 
     # && obsutil config -i $OBS_ACCESS_KEY_ID -k $OBS_SECRET_ACCESS_KEY -e $ENDPOINT 
 
-RUN ls /usr/local/bin
-
-# RUN rm /bin/sh && ln -s /bin/bash /bin/sh
-
-# RUN /bin/bash -c "source /usr/local/bin/setup.sh /usr/local/bin/obsutil"
-
-# RUN source /usr/local/bin/setup.sh /usr/local/bin/obsutil
-
-RUN ls -al /usr/local/bin
-
-
+RUN obsutil help
 
 # 单独分离 package.json，是为了安装依赖可最大限度利用缓存
 ADD package.json yarn.lock /code/
